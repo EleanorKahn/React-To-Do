@@ -1,7 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Col } from "reactstrap";
 import Todo from "./components/Todo";
 import Form from "./components/Form";
 import FilterButton from "./components/FilterButton";
+import ChangeThemeForm from "./components/ChangeThemeForm";
 import { nanoid } from "nanoid";
 
 function usePrevious(value) {
@@ -55,7 +57,7 @@ function App(props) {
   function editTask(id, newName) {
     const editedTaskList = tasks?.map((task) => {
       // If this task has the same id has the edited task
-      if (id == task.id) {
+      if (id === task.id) {
         return {...task, name: newName}
       }
       return task;
@@ -84,7 +86,8 @@ function App(props) {
       isPressed={name === filter}
       setFilter={setFilter}
     />
-  ))
+  ));
+
 
   const tasksNoun = taskList.length !== 1 ? `tasks` : `task`;
   const headingText = `${taskList.length} ${tasksNoun} remaining`;
@@ -104,6 +107,9 @@ function App(props) {
       <Form addTask={addTask} />
       <div className="filters btn-group stack-exception">
         {filterList}
+        <Col md="5" className="m-1">
+          <ChangeThemeForm />
+        </Col>
       </div>
       <h2 id="list-heading" tabIndex="-1" ref={listHeadingRef}>
         {headingText}
