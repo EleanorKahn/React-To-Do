@@ -3,7 +3,7 @@ import { Col } from "reactstrap";
 import Todo from "./components/Todo";
 import Form from "./components/Form";
 import FilterButton from "./components/FilterButton";
-import ChangeThemeForm from "./components/ChangeThemeForm";
+//import ChangeThemeForm from "./components/ChangeThemeForm";
 import { nanoid } from "nanoid";
 
 function usePrevious(value) {
@@ -108,7 +108,6 @@ function App(props) {
       <div className="filters btn-group stack-exception">
         {filterList}
         <Col md="5" className="m-1">
-          <ChangeThemeForm />
         </Col>
       </div>
       <h2 id="list-heading" tabIndex="-1" ref={listHeadingRef}>

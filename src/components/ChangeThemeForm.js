@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Label, Col, FormGroup, Modal, ModalHeader, ModalBody } from "reactstrap";
-import { Formik, Field, Form, ErrorMessage } from "formik";
+//import { Formik, Field, Form, ErrorMessage } from "formik";
 
 const ChangeThemeForm = () => {
     // const [colorTheme, setColorTheme] = useState(null);
@@ -11,6 +11,7 @@ const ChangeThemeForm = () => {
         setModalOpen(false);
     };
 
+    // testing modal popup
     return (
         <>
             <Button className="btn toggle-btn" outline onClick={() => setModalOpen(true)}>
